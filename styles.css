@@ -201,12 +201,34 @@ h2 {
     aspect-ratio: 16/9;
 }
 
-.gallery-item img,
-.gallery-item video {
+/* Specific styles for images */
+.gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 25%;  /* Adjust vertical focus point */
     display: block;
+}
+
+/* Specific styles for iframes */
+.gallery-item iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+}
+
+/* Hover effects */
+.gallery-item img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .gallery-item img {
+        object-position: center 30%;  /* Slightly adjust focus point for mobile */
+    }
 }
 
 .gallery-item-caption {
